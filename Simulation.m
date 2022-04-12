@@ -41,6 +41,7 @@ hold off
 
 %% Maximum Overshoot 
 Mp = 0.2; %20 percent 
+%Mp = e^((-zeta/sqrt(1-zeta^2))*pi)
 %% Settling Time
 %5%
 ts = 1;
