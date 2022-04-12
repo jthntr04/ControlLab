@@ -15,7 +15,7 @@ J = Jhub+Jload+Jextra; %Moment of inertia about the shaft [Kgm^2]
 fc = 1.8; %Natural Frequency [Hz]
 Kstiff = (2*pi*fc)^2*(Jl);
 
-%%% Closed Loop System
+%% Closed Loop System
 Kd = 1.5;
 Kp = 5;
 num = (Kg*Km)/(J*Rm);
@@ -26,7 +26,7 @@ den = [d2 d1 d0];
 sysTF = tf(num,den);
 
 
-%%% Step Response
+%% Step Response
 [x,t] = step(sysTF);
 
 figure()
@@ -36,6 +36,3 @@ title('Simulation');
 xlabel('Time');
 ylabel('Position');
 hold off
-
-
-
