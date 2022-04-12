@@ -36,3 +36,12 @@ title('Simulation');
 xlabel('Time');
 ylabel('Position');
 hold off
+
+%% Peak Time
+
+%% Maximum Overshoot 
+Mp = 0.2; %20 percent 
+%% Settling Time
+%5%
+ts = 1;
+% ts = 3.0/zeta*wn
