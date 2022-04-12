@@ -32,5 +32,10 @@ sysTF = tf(num,den);
 figure()
 hold on
 plot(t,x);
+title('Simulation');
+xlabel('Time');
+ylabel('Position');
+hold off
+
 
 
