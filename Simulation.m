@@ -47,4 +47,11 @@ xlabel('Time');
 ylabel('Position');
 hold off
 
+%% Import Data 
+A = load('April72022/rigid_5_kp_5_kd_0'); %Kp = 5, Kd = 0
+B = load('April72022/rigid_5_kp_10_kd_0'); %Kp = 10, Kd = 0
+C = load('April72022/rigid_5_kp_15_kd_1pt5'); %Kp = 15, Kd = 1
+D = load('April72022/rigid_5_kp_20_kd_0'); %Kp = 20, Kd = 0
+
+
 
