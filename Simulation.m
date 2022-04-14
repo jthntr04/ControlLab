@@ -42,9 +42,12 @@ sysTF = tf(num,den);
 figure()
 hold on
 plot(t,x);
+xline(ts);
+yline(Mp);
 title('Simulation');
 xlabel('Time');
 ylabel('Position');
+legend('Response', 'Settling Time Limit', 'Maximum Overshoot');
 hold off
 
 %% Import Data 
@@ -52,6 +55,10 @@ A = load('April72022/rigid_5_kp_5_kd_0'); %Kp = 5, Kd = 0
 B = load('April72022/rigid_5_kp_10_kd_0'); %Kp = 10, Kd = 0
 C = load('April72022/rigid_5_kp_15_kd_1pt5'); %Kp = 15, Kd = 1
 D = load('April72022/rigid_5_kp_20_kd_0'); %Kp = 20, Kd = 0
+
+figure()
+hold on 
+plot(A(:,1)/1000),A(:,2);
 
 
 
