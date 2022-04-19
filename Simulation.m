@@ -38,27 +38,52 @@ sysTF = tf(num,den);
 
 %% Step Response
 [x,t] = step(sysTF);
+%% Import Data 
+testData = load('testData');
+testData2 = load('testData2');
+% A = load('April72022/rigid_5_kp_5_kd_0'); %Kp = 5, Kd = 0
+% B = load('April72022/rigid_5_kp_10_kd_0'); %Kp = 10, Kd = 0
+% C = load('April72022/rigid_5_kp_15_kd_1pt5'); %Kp = 15, Kd = 1
+% D = load('April72022/rigid_5_kp_20_kd_0'); %Kp = 20, Kd = 0
+% 
+% figure()
+% hold on 
+% plot(A(:,1)/1000),A(:,2);
 
+%% Plotting
 figure()
 hold on
 plot(t,x);
 xline(ts);
 yline(Mp);
-title('Simulation');
+ylim([0,0.3]);
+title('Model Response');
 xlabel('Time');
 ylabel('Position');
-legend('Response', 'Settling Time Limit', 'Maximum Overshoot');
+legend('Response', 'Settling Time', 'Maximum Overshoot');
 hold off
 
-%% Import Data 
-A = load('April72022/rigid_5_kp_5_kd_0'); %Kp = 5, Kd = 0
-B = load('April72022/rigid_5_kp_10_kd_0'); %Kp = 10, Kd = 0
-C = load('April72022/rigid_5_kp_15_kd_1pt5'); %Kp = 15, Kd = 1
-D = load('April72022/rigid_5_kp_20_kd_0'); %Kp = 20, Kd = 0
+figure()
+hold on
+plot((testData(2494:10000,1)-11925000)/1000, testData(2494:10000,2));
+xline(1);
+yline(1.2*0.3);
+title('Experimental Response');
+xlabel('Time');
+ylabel('Position');
+legend('Response', 'Settling Time', 'Maximum Overshoot');
+hold off
 
 figure()
-hold on 
-plot(A(:,1)/1000),A(:,2);
+hold on
+plot((testData2(:,1)-13402752)/1000, testData2(:,2));
+xline(1);
+yline(1.2*0.3);
+title('Experimental Response');
+xlabel('Time');
+ylabel('Position');
+legend('Response', 'Settling Time', 'Maximum Overshoot');
+hold off
 
 
 
